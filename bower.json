@@ -1,0 +1,8 @@
+{
+  "name": "jquery1",
+  "private": true,
+  "dependencies": {
+    "jquery": "~1.10.2"
+  },
+  "devDependencies": {}
+}
