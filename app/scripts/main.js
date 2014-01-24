@@ -1,4 +1,4 @@
-console.log('\'Allo \'Allo!');
+console.log();
 
 
 $('.input').click(function(){
@@ -17,35 +17,77 @@ $('.activate-box').click(function(){
 });
  
 
-
+// example one
 $('.round').hover(function(){
 	console.log('hover on object');
-	$('.round').addClass('change');
+	$(this).addClass('change');
 
 })
 
+// example two
 $('.here').hover(function(){
 	console.log('hover on object');
-	$('.here').addClass('gone');
+	$(this).addClass('gone');
 })
 
+// example three
 $('.spin').click(function(){
 	console.log('the object clicked');
-	$('.spin').addClass('move');
+	$(this).addClass('move');
 })
 
-
+// example four
 $('.up').dblclick(function(){
 	console.log('the object double clicked');
-	$('.up').addClass('light');
+	$(this).addClass('light');
 })
 
+// example five
 $('.disappear').mouseenter(function(){
 	console.log('mouse enters the object');
-	$('.disappear').addClass('poof');
+	$(this).addClass('poof');
 })
 
 
+// example six
+$('.door').click(function(){
+	console.log('the object clicked');
+	$('.window').addClass('window-show');
+})
+
+// example seven
+
+$('.one').hover(function(){
+	console.log('hover on object');
+	$(this).addClass('shadow'); 
+})
+
+// example eight
+$('.two').hover(function(){
+    $(this).addClass('boxshadow');
+})
+
+//example nine 
+$('.three').hover(function(){
+	$(this).fadeOut(1000);
+})
+
+// example ten
+$('.button').click(function(){
+
+	$('.input-trigger').trigger('focus');
+})
+
+// example eleven 
+$('.slide').hover(function(){
+
+     $(this).slideUp();
+})
+
+$('.focus').mouseover(function(){
+   $('.text-field').focus();
+
+})
 
 
 

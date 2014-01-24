@@ -9,6 +9,7 @@ $blue: rgb(50, 103, 137);
     height: 200px;
     border-radius: 100px;
     background-color: $color;
+    position: relative;
     
 }
 
@@ -19,6 +20,16 @@ $blue: rgb(50, 103, 137);
     background-color: $color;
 }
 
+@mixin triangle ($color) {
+    width: 0; 
+    height: 0; 
+    margin: 0 auto;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 100px solid $color;
+
+
+}
 
 .expandable {
     width: 100px;
@@ -88,12 +99,10 @@ body {
 .round {
     @include square($orange);
 
-
-}
-
-.change {
+&.change {
     @include circle ($green);
     -webkit-transition: all 1s ease;
+}
 }
 
 // example 2
@@ -104,12 +113,12 @@ body {
     text-align: center;
     color: $purple;
     -webkit-transition: ease 2s;
-}
 
-.gone {
+&.gone {
     width: 0;
     height: 0;
     font-size: 0;
+}
 }
 
 
@@ -118,48 +127,102 @@ body {
     @include square ($red);
     -webkit-transition: all 1s;
 
-
-}
-
-.move {
+&.move {
     width: 300px;
     height: 300px;
     -webkit-transform:rotate(360deg);
 
 }
+}
 
 // example 4
 
 .up {
-    width: 0; 
-    height: 0; 
-    margin: 0 auto;
-    border-left: 100px solid transparent;
-    border-right: 100px solid transparent;
-    border-bottom: 100px solid $blue;
+    @include triangle ($blue);
     -webkit-transition: all 2s;
 }
 
 .light {
-    width: 0; 
-    height: 0; 
-    margin: 0 auto;
-    border-left: 100px solid transparent;
-    border-right: 100px solid transparent;
-    border-bottom: 100px solid rgb(141, 201, 240);
+    @include triangle (rgb(141, 201, 240));
 }
 
+// example 5
 .disappear {
     @include square ($orange);
     -webkit-transition: all ease 3s;
-}
 
-.poof {
+&.poof {
     height: 0;
     width: 0;
 
 }
+}
+
+// example 6
+
+.roof {
+    @include triangle ($green);
+}
+
+.house {
+    position: relative;
+    @include square ($blue);
+}
+
+.door {
+    height: 75px;
+    width: 45px;
+    background-color: #e36e31;
+    border: 1px solid #b2a333;
+    position: absolute;
+    margin: 0 auto;
+    top: 73px;
+    left: 75px;   
+}
+
+.window {
+    height: 0px;
+    width: 0px;
+    -webkit-transition: all 1s;
 
 
+&.window-show {
+    height: 50px;
+    width: 50px;
+    position: relative;
+    left: 25px;
+    background-color: yellow;
+}
 
+}
+
+// example 7
+
+.series {
+    @include circle ($green);
+    display: inline-block;
+    &.boxshadow {
+        box-shadow: 10px 1px 10px $red;
+    }
+    &.shadow {
+        box-shadow: inset 1px 1px 50px $red;
+    }
+}
+
+.button{
+    width: 150px;
+    height: 50px;
+    margin: 0px auto;
+}
+
+.slide {
+    @include square ($blue);
+}
+
+.focus {
+    
+    margin: 50px auto;
+    font-size: 24px; 
+    padding-right: 100px;
+}
 
