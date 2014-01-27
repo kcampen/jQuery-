@@ -1,6 +1,6 @@
-jQuery-
+Practicing  with jQuery-
 =======
-## Practicing with jQuery
+## jQuery
 
 This was a practice assignment which required 30 different examples of jQuery. 
 I was able to become more acquainted with the jQuery library and the many different functions.
