@@ -220,9 +220,122 @@ body {
 }
 
 .focus {
-    
+
     margin: 50px auto;
     font-size: 24px; 
     padding-right: 100px;
 }
+
+.row {
+    @include square ($red);
+    display: inline-block;
+    color: $blue;
+     margin: 9px;
+     text-align: center;
+
+    &.toggle {
+        background-color: $purple;
+        color: $green;
+    }
+    &.colors {
+        background-color: $orange;
+    }
+    &.toggletwo {
+        width: 100px;
+        height: 50px;
+    }
+    &.togglethree {
+        @include triangle ($red);
+    }
+
+}
+
+.error {
+    @include circle ($orange);
+    display: inline-block;
+    text-align: center;
+    line-height: 150px;
+}
+
+.buttons {
+    @include circle ($blue);
+    display: inline-block;
+    margin: 9px;
+    border: 2px solid $red;
+
+}
+
+.boxes {
+    @include square ($green);
+    display: inline-block;
+    
+    
+
+    &.borders {
+        border: 3px dotted $purple;
+
+    }
+    &.background {
+        background-color: $purple;
+    }
+
+}
+
+.sphere {
+    @include circle ($blue);
+
+    &.change {
+        border-radius: 0px;
+        background-color: $red;
+    }
+
+}
+
+.texting {
+    @include square ($green);
+    color: $red;
+    font-size: 20px;
+
+}
+
+.ball {
+    @include circle ($orange);
+    line-height: 130px;
+    margin: 20px 30px 10px;
+    bottom: 150px;
+
+    &.bounce {
+        bottom: 0px;
+        -webkit-transition:cubic-bezier(0, 0, 0.58, 1);
+    }
+
+}
+
+.cubes {
+    @include square ($red);
+
+    &.floating {
+         box-shadow: (8px 10px 2px 0px ($blue));
+    }
+}
+
+.text {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    margin-top: 100px;
+    height: 25px;
+    width: 100px;
+    border-radius: 6px;
+    box-shadow: inset 0px 2px 2px gray;
+
+    &.white {
+        background-color: white;
+
+    }
+    &.yellow {
+        background-color: yellow;
+    }
+}
+
 
